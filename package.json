@@ -12,6 +12,7 @@
     "dependencies":{
         "koa":"*",
         "koa-router":"*",
-        "koa-views":"*"
+        "koa-views":"*",
+	"koa-statistic" :"*"
     }
 }
