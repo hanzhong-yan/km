@@ -12,7 +12,9 @@
     "dependencies":{
         "koa":"*",
         "koa-router":"*",
+        "ejs":"*",
         "koa-views":"*",
-	"koa-statistic" :"*"
+	"koa-static" :"*",
+        "debug" : "*"
     }
 }
