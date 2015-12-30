@@ -1,0 +1,30 @@
+body {
+    background-color:#876543;
+}
+
+div {
+    background-color:#b0e0e6;
+}
+
+#div1 {
+    border-color:yellow;
+}
+
+#div2 {
+    border-color:green;
+    padding-top:4em;
+}
+
+#div2 div {
+    float:left;
+    border-color:blue;
+    width : 100px;
+    height: 50px;
+}
+
+#div2 :last{
+    /* float:right; */
+    border-color:red;
+    width : 100px;
+    height: 50px;
+}
