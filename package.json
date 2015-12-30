@@ -1,20 +1,21 @@
 {
-    "name": "km",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "harry.yan",
-    "license": "ISC",
-    "dependencies":{
-        "koa":"*",
-        "koa-router":"*",
-        "ejs":"*",
-        "koa-views":"*",
-	"koa-static" :"*",
-        "debug" : "*"
-    }
+  "name": "km",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "harry.yan",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "*",
+    "ejs": "*",
+    "koa": "*",
+    "koa-router": "*",
+    "koa-send": "^3.1.0",
+    "koa-static": "*",
+    "koa-views": "*"
+  }
 }

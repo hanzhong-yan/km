@@ -1,6 +1,6 @@
 'use strict'
 
-process.env.DEBUG = 'koa*,km';
+process.env.DEBUG = 'koaaa*,km';
 
 var util = require("util");
 
@@ -8,6 +8,7 @@ var koa = require("koa");
 var app = koa();
 var router = require("koa-router")();
 var views = require('koa-views');
+var send = require('koa-send');
 
 var logger = require('debug');
 var debug= require('debug')('km');
@@ -17,7 +18,7 @@ app.use(function *(next){
     var start = new Date;
     yield next;
     var ms = new Date - start ; 
-    console.log('%s %s - %s', this.method , this.url , ms);
+    debug('%s %s - %s', this.method , this.url , ms);
 }); 
 
 //Must be used before any router is used 
@@ -28,8 +29,6 @@ app.use(views('views',{
 }));
  
 app.use(function *(next){
-    debug('this.render : %j' , this.render);
-    debug('router: %j' , router);
     yield next;
 });
 
@@ -45,6 +44,11 @@ app.use(function *(next){
     router.get('/user',function *(){
         debug("enter /user");
         yield this.render('user',{user:{name:'hanzhong.yan'}});
+    });
+    //the static resource
+    router.get('/public/*',function *(){
+        debug("enter /static ");
+        yield send(this,this.path);
     });
 
 app.use(router.routes())
