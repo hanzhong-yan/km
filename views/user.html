@@ -6,24 +6,36 @@
         <link rel="stylesheet" type="text/css" href="public/css/km.css">
         <script src="http://localhost:3000/public/js/jquery-2.1.4.js" type="text/javascript"></script>
         <script src="http://localhost:3000/public/js/km.js" type="text/javascript"></script>
-        <style>
-            div {
-                border : 1px solid red;
-                width : 500px;
-                height : 200px ; 
-            }
-        </style>
         <script type="text/javascript">
         </script>
     </head>
     <body>
-        <div id="div1">fdasfdas
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="80em" height="41em">
-            中文</div>
-        <div id="div2">
-            <div>div2</div>
-            <div><input type="text"></div>
+        <div class="container">
+            <!-- //This is Header banner part  -->
+            <div id="topBanner">
+            </div>
+
+            <!--//This is side toolbar part -->
+            <div id="sideBar">
+            </div>
+
+            <!-- //This is knowledge recording popup dialog  -->
+            <div id="knowledgeRecordingPop">
+            </div>
+
+            <!-- //this is bottom status line  -->
+            <div id="status_line">
+            </div>
+            <!-- //this is command input -->
+            <div id="command_input">
+                <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="80em" height="41em"> -->
+                <textarea cols="30" rows="5"></textarea>
+            </div>
+            <hr style="{margin:0px}">
+            <!-- this is knowledge display part -->
+            <div id="knowledge_display">
+            </div>
+
         </div>
-        <input type="button" id="btn" value="test" />
     </body>
 </html>

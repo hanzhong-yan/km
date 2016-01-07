@@ -1,30 +1,33 @@
 body {
-    background-color:#876543;
+    background-color:#ffffff;
+    width:60%;
+    margin : auto ;
 }
 
-div {
-    background-color:#b0e0e6;
+.container {
+
 }
 
-#div1 {
-    border-color:yellow;
+#topBanner {
+
 }
 
-#div2 {
-    border-color:green;
-    padding-top:4em;
+#sideBar {
+
 }
 
-#div2 div {
-    float:left;
-    border-color:blue;
-    width : 100px;
-    height: 50px;
+#knowledgeRecordingPop {
+
 }
 
-#div2 :last{
-    /* float:right; */
-    border-color:red;
-    width : 100px;
-    height: 50px;
+#status_line {
+
+}
+
+#commandInput {
+
+}
+
+#knowledge_display {
+
 }
