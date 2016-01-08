@@ -1,6 +1,9 @@
 var fs = require("fs");
-module.export = KM = function KM(){
-    return new KM();
+module.exports = KM ; 
+function KM(){
+    if (!(this instanceof KM)) {
+      return new KM();
+    }
     this.data = {};
 };
 

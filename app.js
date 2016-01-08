@@ -14,7 +14,8 @@ var logger = require('debug');
 var debug= require('debug')('km');
 
 
-var km = require('./km');
+var km = require('./km')();
+debug('km is : %j' , km);
 
 //logger 
 app.use(function *(next){
@@ -56,9 +57,8 @@ app.use(function *(next){
 
 
     router.post('/saveKnlg',function *(){
-        console.log(this);
-        km.saveKnowledge(this.kp);
-
+        console.log(this.params);
+        km.saveKnowledge.call(this,{kp:'this is test'});
     });
 
 app.use(router.routes())
