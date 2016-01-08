@@ -1,4 +1,4 @@
 
 $(function(){
-    $("#knowledgeRecordingPop").hide();
+    //$("#knowledgeRecordingPop").hide();
 });

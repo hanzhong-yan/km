@@ -1,33 +1,84 @@
 body {
-    background-color:#ffffff;
-    width:60%;
-    margin : auto ;
+    //background : url('../img/pic1.jpg') #ffffff  center;
+}
+
+div {
+    margin : 2px 0 2px;
 }
 
 .container {
-
+    width:60%;
+    margin : auto ;
+    //background:url('../img/pc1.jpg') #ffffff no-repeat center;
 }
 
 #topBanner {
-
+    /* background-color:blue; */
+    border : 1px solid #111111;
+    height:50px;
 }
 
 #sideBar {
-
+    border : 1px solid #111111;
+    height: 200px;
+    width : 80px;
+    position : fixed ;
+    top : 25%;
+    left : 10%;
 }
 
 #knowledgeRecordingPop {
-
+    border : 1px solid #111111;
+    height:300px;
 }
 
 #status_line {
-
+    border : 1px solid #111111;
 }
 
 #commandInput {
-
+    border : 1px solid #111111;
+    height:30px;
 }
 
 #knowledge_display {
+    border : 1px solid #111111;
+    min-height:300px;
+}
+
+#command_input textarea {
+    width:99.5%;
+    //text-align:center;
+    padding-top:2px;
+    font-size : 2em ; 
+    /* line-height : 1.8; */
 
 }
+#knowledgeRecordingPop textarea {
+    width  : 80%;
+    height : 80%;
+}
+
+#knowledgeRecordingPop .knlg_save_panel {
+    background-color:gray;
+    margin-right : 2px;
+    margin-bottom : 0;
+    width : 19%;
+    height: 80%;
+    float: right ;
+}
+#knowledgeRecordingPop .knlg_save_panel #knlg_save{
+    //position:absolute;
+    bottom : 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
