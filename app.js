@@ -13,6 +13,9 @@ var send = require('koa-send');
 var logger = require('debug');
 var debug= require('debug')('km');
 
+
+var km = require('./km');
+
 //logger 
 app.use(function *(next){
     var start = new Date;
@@ -47,8 +50,15 @@ app.use(function *(next){
     });
     //the static resource
     router.get('/public/*',function *(){
-        debug("enter /static ");
+        debug("get static resource :" + this.path);
         yield send(this,this.path);
+    });
+
+
+    router.post('/saveKnlg',function *(){
+        console.log(this);
+        km.saveKnowledge(this.kp);
+
     });
 
 app.use(router.routes())

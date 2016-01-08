@@ -3,6 +3,7 @@ body {
 }
 
 div {
+    border : 1px solid #111111;
     margin : 2px 0 2px;
 }
 
@@ -27,10 +28,6 @@ div {
     left : 10%;
 }
 
-#knowledgeRecordingPop {
-    border : 1px solid #111111;
-    height:300px;
-}
 
 #status_line {
     border : 1px solid #111111;
@@ -52,24 +49,41 @@ div {
     padding-top:2px;
     font-size : 2em ; 
     /* line-height : 1.8; */
+}
 
+#knowledgeRecordingPop {
+    border : 1px solid #111111;
+    height:300px;
+}
+#knowledgeRecordingPop .knlg_textarea {
+    width : 79%;
+    height : 80%;
+    float : left;
 }
 #knowledgeRecordingPop textarea {
-    width  : 80%;
-    height : 80%;
+    margin-left : 2px;
+    padding : 15px 13px 0;
+    width  : 96%;
+    height : 92%;
 }
 
 #knowledgeRecordingPop .knlg_save_panel {
-    background-color:gray;
+    /* background-color:gray; */
+    /* border : 1px solid red; */
     margin-right : 2px;
     margin-bottom : 0;
-    width : 19%;
+    width : 20%;
     height: 80%;
     float: right ;
+    position:relative;
 }
 #knowledgeRecordingPop .knlg_save_panel #knlg_save{
-    //position:absolute;
+    position:absolute;
+    border : 0px ;
+    /* border-top : 1px solid blue; */
     bottom : 5px;
+    right : 2px;
+    width:80%;
 }
 
 
