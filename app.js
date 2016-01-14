@@ -44,6 +44,7 @@ app.use(function *(next){
     router.get('/account',function *(next){
         debug("enter /account ");
         yield this.render('user');
+
     }); 
     router.get('/user',function *(){
         debug("enter /user");
