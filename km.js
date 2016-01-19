@@ -20,11 +20,13 @@ KM.prototype.saveKnowledge = function(kp){
     var id = (new Date()).getTime();
     kp.id = id;
     var self = this;
-    fs.appendFile(cfg.fileName,JSON.stringify(kp),function(err){
-        if(err){
-            self.body = err;
-        }else{
-            self.body = "save success. id:" + id;
-        }
+    return new Promise(function(resolve,reject){
+        fs.appendFile(cfg.fileName,JSON.stringify(kp),function(err){
+            if(err){
+                reject(err);
+            }else{
+                resolve(kp);
+            }
+        });
     });
 };

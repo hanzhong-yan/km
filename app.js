@@ -44,7 +44,6 @@ app.use(function *(next){
     router.get('/account',function *(next){
         debug("enter /account ");
         yield this.render('user');
-
     }); 
     router.get('/user',function *(){
         debug("enter /user");
@@ -58,10 +57,25 @@ app.use(function *(next){
 
 
     router.post('/saveKnlg',function *(){
-        console.log(this.params);
-        km.saveKnowledge.call(this,{kp:'this is test'});
+        try{
+            // throw(Error('test error ....'));
+            console.log(this.params);
+            //km.saveKnowledge.call(this,{kp:'this is test'});
+            this.body = yield km.saveKnowledge.call(this,{kp:'this is test'});
+            // this.body = '123412341234123412341';
+        }catch(e){
+            console.error('-------------',e);
+        }
     });
 
 app.use(router.routes())
    .use(router.allowedMethods());
 app.listen(3000);
+app.on('error',function(err,ctx){
+    log.error("server meet error:",err,ctx);
+    ctx.body = err ; 
+});
+
+
+
+
