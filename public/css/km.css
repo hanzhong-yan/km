@@ -87,6 +87,9 @@ div {
 }
 
 
+div #commandInput {
+    width : 100%;
+}
 
 
 
