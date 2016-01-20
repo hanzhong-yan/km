@@ -21,7 +21,7 @@ KM.prototype.saveKnowledge = function(kp){
     kp.id = id;
     var self = this;
     return new Promise(function(resolve,reject){
-        fs.appendFile(cfg.fileName,JSON.stringify(kp),function(err){
+        fs.appendFile(cfg.fileName,JSON.stringify(kp)+'\n',function(err){
             if(err){
                 reject(err);
             }else{

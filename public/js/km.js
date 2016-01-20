@@ -6,13 +6,12 @@ $(function(){
         $.ajax({
             method : "post",
             url : 'saveKnlg',
-            data : {kp : $(this).val()}
+            data : {kp : $("#knlg").val()}
         }).done(function(result){
-            console.log(result);
-            $("#topBanner>p").html(result);
+            result = JSON.stringify(result);
+            $("#topBanner p").html(result);
         }).fail(function(error){
-            console.log(error);
-            $("#topBanner>p").html(error);
+            $("#topBanner p").html(error);
         });
     });
 });

@@ -9,6 +9,7 @@ var app = koa();
 var router = require("koa-router")();
 var views = require('koa-views');
 var send = require('koa-send');
+var parse = require('co-body');
 
 var logger = require('debug');
 var debug= require('debug')('km');
@@ -59,10 +60,10 @@ app.use(function *(next){
     router.post('/saveKnlg',function *(){
         try{
             // throw(Error('test error ....'));
-            console.log(this.params);
+            var knlg = yield parse(this);
+            console.log(knlg);
             //km.saveKnowledge.call(this,{kp:'this is test'});
-            this.body = yield km.saveKnowledge.call(this,{kp:'this is test'});
-            // this.body = '123412341234123412341';
+            this.body = yield km.saveKnowledge.call(this,knlg);
         }catch(e){
             console.error('-------------',e);
         }
