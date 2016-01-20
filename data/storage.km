@@ -1,3 +1,4 @@
 {"kp":"today is :","id":1453282701601}
 {"kp":"fdsafdsa","id":1453282886222}
 {"kp":"please input some knowledge ","id":1453282943733}
+{"kp":"--研究任务相关：\n\t1.mobile api 的协议设计方面  ， \n\t\t1.https\n\t\t2.安全 方面\n\t\t3.对发出去的客户端，如何进行管理：停止、开启等\n\t\n\t2.mobile api 需要完善的地方\n\t\t1.礼物配置管理 ： 通用礼物 、 活动礼物 \n\t\t2.接口管理：文档说明、接口定义等\n\t\t3.代码结构\n\t\n\t3.个人高效工作相关\n\t\t1.acid索引\n\t\t2.redis key 索引\n\t\t3.console页面快速开发\n\n         \n\n\n\n ","id":1453283774586}
