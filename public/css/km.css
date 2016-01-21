@@ -13,13 +13,13 @@ div {
     //background:url('../img/pc1.jpg') #ffffff no-repeat center;
 }
 
-#topBanner {
+#top_banner {
     /* background-color:blue; */
     border : 1px solid #111111;
     height:50px;
 }
 
-#sideBar {
+#side_bar {
     border : 1px solid #111111;
     height: 200px;
     width : 80px;
@@ -33,7 +33,7 @@ div {
     border : 1px solid #111111;
 }
 
-#commandInput {
+#command_input {
     border : 1px solid #111111;
     height:30px;
 }
@@ -43,7 +43,7 @@ div {
     min-height:300px;
 }
 
-#command_input textarea {
+#command_input_div input[type="text"]{
     width:99.5%;
     //text-align:center;
     padding-top:2px;
@@ -51,23 +51,23 @@ div {
     /* line-height : 1.8; */
 }
 
-#knowledgeRecordingPop {
+#knowledge_recording_pop {
     border : 1px solid #111111;
     height:300px;
 }
-#knowledgeRecordingPop .knlg_textarea {
+#knowledge_recording_pop .knlg_textarea {
     width : 79%;
     height : 80%;
     float : left;
 }
-#knowledgeRecordingPop textarea {
+#knowledge_recording_pop textarea {
     margin-left : 2px;
     padding : 15px 13px 0;
     width  : 96%;
     height : 92%;
 }
 
-#knowledgeRecordingPop .knlg_save_panel {
+#knowledge_recording_pop .knlg_save_panel {
     /* background-color:gray; */
     /* border : 1px solid red; */
     margin-right : 2px;
@@ -77,7 +77,7 @@ div {
     float: right ;
     position:relative;
 }
-#knowledgeRecordingPop .knlg_save_panel #knlg_save{
+#knowledge_recording_pop .knlg_save_panel #knlg_save{
     position:absolute;
     border : 0px ;
     /* border-top : 1px solid blue; */
@@ -87,9 +87,9 @@ div {
 }
 
 
-div #commandInput {
-    width : 100%;
-}
+/* div #command_input { */
+    /* width : 100%; */
+/* } */
 
 
 

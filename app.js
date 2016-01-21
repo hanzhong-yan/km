@@ -59,11 +59,9 @@ app.use(function *(next){
 
     router.post('/saveKnlg',function *(){
         try{
-            // throw(Error('test error ....'));
             var knlg = yield parse(this);
-            console.log(knlg);
-            //km.saveKnowledge.call(this,{kp:'this is test'});
-            this.body = yield km.saveKnowledge.call(this,knlg);
+            // this.body = yield km.saveKnowledge.call(this,knlg);
+            this.body = yield km.saveKnowledge(knlg);
         }catch(e){
             console.error('-------------',e);
         }
