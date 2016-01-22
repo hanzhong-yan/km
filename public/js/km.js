@@ -27,19 +27,20 @@ $(function(){
         //load tag from server by ajax
         load : function(){
             //TODO:
-            this.tags = ['mysql','yunfan','yunfan','yunfan','yunfan'];
+            this.tags = ['mysql','yunfan','yunfan','yunfan','yunfan','testtest','aa','bb'];
         },
 
         render : function () {
             var ul = $(this.container).find('ul');
-            $(this.container).find('ul').empty();
+            // $(this.container).find('ul').empty();
+            ul.find('li').slice(0,-2).remove();
             this.tags.forEach(function(tag){
-                ul.append('<li>'+tag+'</li>');
+                ul.prepend('<li>'+tag+'</li>');
             });
-            ul.append('<li><input type="button" value="+"> </li>');
+            // ul.append('<li><input type="button" value="+"> </li>');
 
-            $(this.container).find('li').forEach(function(e,i,arr){
-                if(i >= arr.length - 2) return;
+            $(this.container).find('li').slice(0,-2).each(function(){
+
                 $(this).on({
                     click : function(){
                         if(this.count == undefined) this.count = 0;
@@ -48,9 +49,7 @@ $(function(){
                         else $(this).removeClass("selected");
                     }
                 });
-
             });
-
         },
 
         init : function(divId){
