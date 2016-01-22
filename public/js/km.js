@@ -6,13 +6,61 @@ $(function(){
     window.commandInputter = {
         container : null,
         text : null,
-        focus : function(){ this.text.focus();},
+        focus : function(){ 
+
+            this.text.select();
+            // this.text.focus();
+
+        },
         bindTo : function(divId){
             this.container = $('#'+divId);
             this.text = $(this.container).find("input[type='text']");
         }
     };
     commandInputter.bindTo("command_input_div");
+
+    window.tagPanel = {
+        container : null,
+
+        tags : [],
+
+        //load tag from server by ajax
+        load : function(){
+            //TODO:
+            this.tags = ['mysql','yunfan','yunfan','yunfan','yunfan'];
+        },
+
+        render : function () {
+            var ul = $(this.container).find('ul');
+            $(this.container).find('ul').empty();
+            this.tags.forEach(function(tag){
+                ul.append('<li>'+tag+'</li>');
+            });
+            ul.append('<li><input type="button" value="+"> </li>');
+
+            $(this.container).find('li').forEach(function(e,i,arr){
+                if(i >= arr.length - 2) return;
+                $(this).on({
+                    click : function(){
+                        if(this.count == undefined) this.count = 0;
+                        else this.count++;
+                        if(this.count % 2 == 0) $(this).addClass('selected');
+                        else $(this).removeClass("selected");
+                    }
+                });
+
+            });
+
+        },
+
+        init : function(divId){
+            this.container = $('#' + divId);
+            this.load();
+            this.render();
+
+        }
+    };
+    tagPanel.init('tag_panel');
 
 
 
@@ -32,7 +80,7 @@ $(function(){
 
 
     $("body").on({
-        keypress : function(event){
+        keyup : function(event){
             $("#status_line p").html("The input char is:" + String.fromCharCode(event.charCode));
             var keyCode = String.fromCharCode(event.charCode);
             switch (keyCode) {
