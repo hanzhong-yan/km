@@ -99,7 +99,7 @@ ul , li {
     display:inline-block;
     /* background-color:#e9efdf;  */
     padding : 1px 2px ;
-    margin-right : 1em;
+    margin-right : 2px;
     margin-left : 0.5em;
 }
 
@@ -116,5 +116,8 @@ ul , li {
 }
 
 
+#tag_ash_bin {
+    height:1em;
+}
 
 
