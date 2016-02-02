@@ -120,7 +120,11 @@ ul , li {
 
 
 #tag_ash_bin {
-    height:1em;
+    //display:inline-block;
+    height : 3em;
+    width:3em;
+    border:0;
+    background:#eab1e3 url('../img/dustbin.png') no-repeat top right;
 }
 
 

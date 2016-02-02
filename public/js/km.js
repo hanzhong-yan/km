@@ -33,36 +33,43 @@ $(function(){
         add : function(tag) {
             this.tags.push(tag);
             $(this.container).find('li').eq(-2).before('<li>'+tag+'</li>')
-            $(this.container).find('li').eq(-3).bind('click',this.onClick);
+            $(this.container).find('li').eq(-3).attr('id','tag_' + tag).bind('click',this.onClick).bind('dragstart',this.onDragStart);
             // this.render();
         },
 
         render : function () {
             var ul = $(this.container).find('ul');
-            // $(this.container).find('ul').empty();
             ul.find('li').slice(0,-2).remove();
             this.tags.reverse().forEach(function(tag){
                 ul.prepend('<li>'+tag+'</li>');
             });
             this.tags.reverse();
-            // ul.append('<li><input type="button" value="+"> </li>');
-            $(this.container).find('li').eq(-2).hide();
-            $(this.container).find('li').eq(-2).find('input').keyup(function(e){
-                switch (e.keyCode) {
-                    case 13://回车,添加tag
-                        console.log(111);
-                        tagPanel.add($(this).val());
-                        $(this).val("").parent().hide();
-                    break;
-                    case 27://Esc,cancel
-                        $(this).val("").parent().hide();
-                    break;
-                }
 
+            $(this.container).find('li').slice(0,-2).each(function(idx){
+                $(this).attr("id","tag_"+ $(this).val());
+                $(this).attr("draggable",true);
+
+                $(this).on({
+                    click : tagPanel.onClick,
+                    dragstart : tagPanel.onDragStart
+                });
             });
-            $(this.container).find('li:eq(-1)').click(function(){
-                $(this).prev().show().find('input').focus();
-            });
+        },
+
+        onDragStart : function(ev){
+            ev.originalEvent.dataTransfer.setData("target", ev.target.id);
+        },
+
+        onClick : function(){
+                if(this.count == undefined) this.count = 0;
+                else this.count++;
+                if(this.count % 2 == 0) $(this).addClass('selected');
+                else $(this).removeClass("selected");
+        },
+
+        init : function(divId){
+
+            this.container = $('#' + divId);
 
             $('#tag_ash_bin').attr("draggable",true);
 
@@ -76,29 +83,26 @@ $(function(){
                 }
             });
 
-            $(this.container).find('li').slice(0,-2).each(function(idx){
-                $(this).attr("id","tag_"+idx);
-                $(this).attr("draggable",true);
+            $(this.container).find('li:eq(-2)').hide();
+            $(this.container).find('li').eq(-2).find('input').keyup(function(e){
+                switch (e.keyCode) {
+                    case 13://回车,添加tag
+                        if($.trim(this.value).length == 0) return;
+                        tagPanel.add($(this).val());
+                        $(this).val("").parent().hide();
+                    break;
+                    case 27://Esc,cancel
+                        $(this).val("").parent().hide();
+                    break;
+                }
 
-                $(this).on({
-                    click : tagPanel.onClick,
-                    dragstart : tagPanel.onDragStart
-                });
             });
-        },
-        onDragStart : function(ev){
-            ev.originalEvent.dataTransfer.setData("target", ev.target.id);
-        },
 
-        onClick : function(){
-                if(this.count == undefined) this.count = 0;
-                else this.count++;
-                if(this.count % 2 == 0) $(this).addClass('selected');
-                else $(this).removeClass("selected");
-        },
+            $(this.container).find('li:eq(-1)').click(function(){
+                $(this).prev().show().find('input').focus();
+            });
 
-        init : function(divId){
-            this.container = $('#' + divId);
+
             this.load();
             this.render();
 
